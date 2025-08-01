@@ -1,5 +1,6 @@
 import { useState } from "react";
 import gallImg from "../../assets/gall.png";
+import SectionHeading from "../elements/SectionHeading";
 
 
 
@@ -56,6 +57,10 @@ export default function Gallery() {
   return (
     <section id="Gallery" className=" py-16 px-4 sm:px-6 lg:px-8 xl:px-28 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
+        {/* Section Heading*/}
+        <SectionHeading
+          title="Generated Images"
+        />
 
         {/* Our Gallery section*/}
         <div className=" bg-gradient-to-r from-[#fff] to-[#DDE5FF] p-8 pb-20 md:pb-8 rounded-3xl  relative"> 
