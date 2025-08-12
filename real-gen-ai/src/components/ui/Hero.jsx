@@ -73,7 +73,7 @@ const Hero = () => {
           </p>
 
           {/* Generate Images Button */}
-          <Button value="Generate Images"/>
+          <Button to="/generate">Generate Images</Button>
 
           {/* Placeholder Image Squares */}
           <div className="flex flex-wrap justify-center gap-4 mt-12">

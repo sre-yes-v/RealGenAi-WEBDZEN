@@ -55,7 +55,7 @@ function Header() {
           <a href="#" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Gallery</a>
           <a href="#" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Contact Us</a>
            {/* Login Button */}
-            <Button value="Login"/>
+            <Button>Login</Button>
         </div>
       </div>
 
@@ -68,7 +68,7 @@ function Header() {
           <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Contact Us</a>
           <div className="px-4 py-2">
             {/* Login Button */}
-            <Button value="Login"/>
+            <Button>Login</Button>
           </div>
         </div>
       )}

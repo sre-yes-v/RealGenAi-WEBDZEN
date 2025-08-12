@@ -2,13 +2,13 @@ import React from 'react'
 import Hero from './Hero'
 import Gallery from './Gallery'
 
-const HomeMain = () => {
+const HomePage = () => {
   return (
     <main className='pt-20'>
-        <Hero/>
-        <Gallery/>
+      <Hero />
+      <Gallery />
     </main>
   )
 }
 
-export default HomeMain
+export default HomePage

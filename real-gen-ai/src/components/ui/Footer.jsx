@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
 
           {/* Generate Images Button */}
-          <Button value="Generate Images"/>
+          <Button to="/generate">Generate Images</Button>
         </div>
       </main>
 
