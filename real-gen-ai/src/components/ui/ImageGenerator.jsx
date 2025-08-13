@@ -83,7 +83,7 @@ export default function ImageGenerator() {
   };
 
   return (
-    <div className="w-full max-w-full p-4 py-20 bg-[#01003C] flex flex-col gap-6">
+    <div id='generate' className="w-full max-w-full p-4 py-20 bg-[#01003C] flex flex-col gap-6">
       {/* Image Display Area */}
       <div className="w-full lg:w-1/2 mx-auto h-80 sm:h-96 bg-gray-300 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-inner">
         {isLoading ? (

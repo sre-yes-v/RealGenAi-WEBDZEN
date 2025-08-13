@@ -20,7 +20,7 @@ const ImageGenHero = () => {
               </p>
     
               {/* Generate Images Button */}
-              <Button to="#generate">Scroll Down</Button>
+              <div className='bg-blue-950 text-white px-8 py-3 rounded-full text-lg sm:text-xl font-medium shadow-xl  transition duration-300 ease-in-out transform focus:outline-none focus:ring-4 focus:ring-blue-300'>Scroll Down  &darr;</div>
     
               
             </div>
