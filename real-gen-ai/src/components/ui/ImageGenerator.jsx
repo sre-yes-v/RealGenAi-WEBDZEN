@@ -26,10 +26,10 @@ export default function ImageGenerator() {
     try {
       const apiKey = import.meta.env.VITE_CLIPDROP_API_KEY;
       if (!apiKey) {
-        throw new Error('API key is missing. Set VITE_CLIPDROP_API_KEY in your .env.');
+        throw new Error('API key is missing');
       }
 
-      // Clipdrop text-to-image v1 expects multipart/form-data with a single "prompt" field.
+      
       const form = new FormData();
       form.append('prompt', prompt);
 
@@ -37,8 +37,7 @@ export default function ImageGenerator() {
         method: 'POST',
         headers: {
           'x-api-key': apiKey,
-          // Do NOT set Content-Type manually; the browser will add the correct boundary.
-          'Accept': 'image/jpeg', // you can use 'image/png' or 'image/webp' if you prefer
+          'Accept': 'image/jpeg', 
         },
         body: form,
       });
@@ -84,9 +83,9 @@ export default function ImageGenerator() {
   };
 
   return (
-    <div className="w-full max-w-full p-8 bg-[#283593] flex flex-col gap-6">
+    <div className="w-full max-w-full p-4 bg-[#283593] flex flex-col gap-6">
       {/* Image Display Area */}
-      <div className="w-1/2 mx-auto h-80 sm:h-96 bg-gray-300 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-inner">
+      <div className="w-full lg:w-1/2 mx-auto h-80 sm:h-96 bg-gray-300 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-inner">
         {isLoading ? (
           <svg
             className="animate-spin h-10 w-10 text-white"
@@ -135,7 +134,7 @@ export default function ImageGenerator() {
       </div>
 
       {/* Input and Generate Button */}
-      <div className="w-1/2 mx-auto flex items-center gap-4 mt-4">
+      <div className="w-full lg:w-1/2 mx-auto flex items-center gap-4 mt-4">
         <input
           type="text"
           value={prompt}
