@@ -51,9 +51,9 @@ function Header() {
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           <a href="#" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Home</a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Working</a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Gallery</a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Contact Us</a>
+          <a href="#working" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Working</a>
+          <a href="#gallery" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Gallery</a>
+          <a href="#contact" className="text-gray-700 hover:text-blue-600 text-lg font-medium">Contact Us</a>
            {/* Login Button */}
             <Button>Login</Button>
         </div>
@@ -63,9 +63,9 @@ function Header() {
       {isOpen && (
         <div className="md:hidden mt-4 bg-gray-50 rounded-lg shadow-inner py-2">
           <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Home</a>
-          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Working</a>
-          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Gallery</a>
-          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Contact Us</a>
+          <a href="#working" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Working</a>
+          <a href="#gallery" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Gallery</a>
+          <a href="#contact" className="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-md">Contact Us</a>
           <div className="px-4 py-2">
             {/* Login Button */}
             <Button>Login</Button>

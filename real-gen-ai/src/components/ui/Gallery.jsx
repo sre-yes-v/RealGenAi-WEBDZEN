@@ -55,7 +55,7 @@ export default function Gallery() {
   const slideTransform = `translateX(-${currentIndex * 264}px)`;
 
   return (
-    <section id="Gallery" className=" py-16 px-4 sm:px-6 lg:px-8 xl:px-28 scroll-mt-20">
+    <section id="gallery" className=" py-16 px-4 sm:px-6 lg:px-8 xl:px-28 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading*/}
         <SectionHeading
