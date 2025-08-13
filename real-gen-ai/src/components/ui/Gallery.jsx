@@ -1,5 +1,8 @@
 import { useState } from "react";
-import gallImg from "../../assets/gall.png";
+import gallImg from "../../assets/images/generated-image(1).jpg";
+import gallImg1 from "../../assets/images/generated-image(2).jpg";
+import gallImg2 from "../../assets/images/generated-image(3).jpg";
+import gallImg3 from "../../assets/images/generated-image(4).jpg";
 import SectionHeading from "../elements/SectionHeading";
 
 
@@ -13,15 +16,15 @@ export default function Gallery() {
     },
     {
       name: "Img 2",
-      image: gallImg,
+      image: gallImg1,
     },
     {
       name: "Img 3",
-      image: gallImg,
+      image: gallImg2,
     },
     {
       name: "Img 4",
-      image: gallImg,
+      image: gallImg3,
     },
     {
       name: "Img 5",
@@ -29,11 +32,11 @@ export default function Gallery() {
     },
     {
       name: "Img 6",
-      image: gallImg,
+      image: gallImg1,
     },
     {
       name: "Img 7",
-      image: gallImg,
+      image: gallImg2,
     },
     
     

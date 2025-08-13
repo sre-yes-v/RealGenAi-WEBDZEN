@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../elements/Button';
+import gallImg from "../../assets/images/generated-image(1).jpg";
+import gallImg1 from "../../assets/images/generated-image(2).jpg";
+import gallImg2 from "../../assets/images/generated-image(3).jpg";
+import gallImg3 from "../../assets/images/generated-image(4).jpg";
 
 // Hero component with typewriter effect for the input field
 const Hero = () => {
@@ -77,10 +81,11 @@ const Hero = () => {
 
           {/* Placeholder Image Squares */}
           <div className="flex flex-wrap justify-center gap-4 mt-12">
-            <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gray-300 rounded-lg shadow-md"></div>
-            <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gray-300 rounded-lg shadow-md"></div>
-            <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gray-300 rounded-lg shadow-md"></div>
-            <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gray-300 rounded-lg shadow-md"></div>
+            <img src={gallImg} className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg shadow-md" alt='generated image 1'/>
+            <img src={gallImg1} className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg shadow-md" alt='generated image 1'/>
+            <img src={gallImg2} className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg shadow-md" alt='generated image 1'/>
+            <img src={gallImg3} className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg shadow-md" alt='generated image 1'/>
+
           </div>
 
           {/* Generated Images Text */}
