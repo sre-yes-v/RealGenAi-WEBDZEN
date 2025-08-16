@@ -7,7 +7,7 @@ export default function ImageGenerator() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // revoke Blob URLs to avoid memory leaks
+  // Revoke Blob URLs to avoid memory leaks
   useEffect(() => {
     return () => {
       if (imageUrl?.startsWith('blob:')) URL.revokeObjectURL(imageUrl);
@@ -24,32 +24,40 @@ export default function ImageGenerator() {
     setError(null);
 
     try {
-      const apiKey = import.meta.env.VITE_CLIPDROP_API_KEY;
-      if (!apiKey) {
-        throw new Error('API key is missing');
+      const apiToken = import.meta.env.VITE_HUGGINGFACE_API_TOKEN;
+      if (!apiToken) {
+        throw new Error('Hugging Face API token is missing. Please check your environment variables.');
       }
 
-      
-      const form = new FormData();
-      form.append('prompt', prompt);
+      // Hugging Face Inference API endpoint for a specific text-to-image model
+      const apiEndpoint = 'https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0';
 
-      const resp = await fetch('https://clipdrop-api.co/text-to-image/v1', {
+      // Request body for the Hugging Face API
+      const requestBody = {
+        inputs: prompt,
+      };
+
+      const resp = await fetch(apiEndpoint, {
         method: 'POST',
         headers: {
-          'x-api-key': apiKey,
-          'Accept': 'image/jpeg', 
+          "Content-Type": 'application/json',
+          Accept: "image/png",
+          Authorization: `Bearer ${apiToken}`,
         },
-        body: form,
+        body: JSON.stringify(requestBody),
       });
-
-      if (!resp.ok) {
-        const txt = await resp.text().catch(() => '');
-        throw new Error(`Clipdrop request failed (${resp.status}). ${txt}`);
+      
+      // Handle non-200 responses. The API returns a JSON error message.
+      if (resp.status !== 200) {
+        const errorData = await resp.json().catch(() => ({}));
+        const errorMessage = errorData.error || `Hugging Face request failed with status: ${resp.status}`;
+        throw new Error(errorMessage);
       }
 
-      // Clipdrop returns raw image bytes -> convert to object URL
+      // Hugging Face API returns the raw image data directly.
       const blob = await resp.blob();
       const url = URL.createObjectURL(blob);
+
       setImageUrl((prev) => {
         if (prev?.startsWith('blob:')) URL.revokeObjectURL(prev);
         return url;
@@ -66,7 +74,7 @@ export default function ImageGenerator() {
     if (!imageUrl) return;
     const link = document.createElement('a');
     link.href = imageUrl;
-    link.download = 'generated-image.jpg';
+    link.download = 'generated-image.png';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
